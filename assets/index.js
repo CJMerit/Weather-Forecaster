@@ -202,6 +202,7 @@ const fetchForecast = (forecasturl) => {
 }
 
 const fetchCurrent = (searchObj) => {
+    
     fetch(searchObj.url)
         .then((response) => {
             if (!response.ok) {
@@ -212,12 +213,15 @@ const fetchCurrent = (searchObj) => {
             return response.json();
         })
         .then((data) => {
-            localStorage.setItem(`${searchObj.city}`, JSON.stringify(searchObj));
-            let recentSearchDisplay = $('<button>');
-            recentSearchDisplay.attr('type', 'button')
-            recentSearchDisplay.attr('class', 'btn m-2')
-            recentSearchDisplay[0].textContent = searchObj.city.replace(/%20/g,' ');
-            recent.append(recentSearchDisplay);
+            let keys = Object.keys(localStorage);
+            if(!keys.includes(`${searchObj.city}`)) {
+                localStorage.setItem(`${searchObj.city}`, JSON.stringify(searchObj));
+                let recentSearchDisplay = $('<button>');
+                recentSearchDisplay.attr('type', 'button')
+                recentSearchDisplay.attr('class', 'btn m-2')
+                recentSearchDisplay[0].textContent = searchObj.city.replace(/%20/g,' ');
+                recent.append(recentSearchDisplay);
+            }
 
             let cityName = data.name;
             let currentTemp = `${data.main.temp}°F`;
@@ -236,7 +240,7 @@ const fetchCurrent = (searchObj) => {
 
 searchBtn.click((event) => {
     event.preventDefault();
-
+    searchTerms.textContent = 'Enter a City and Zip Code';
     let url;
     let city;
     let zipCode;
@@ -280,6 +284,7 @@ recent.click((event) => {
         return;
     }
     else {
+        searchTerms.textContent = 'Enter a City and Zip Code';
         let getSearch = JSON.parse(localStorage.getItem(`${event.target.textContent.replace(/ /g,'%20')}`));
         fetchCurrent(getSearch);
     }
