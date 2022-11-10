@@ -65,11 +65,14 @@ const getRecentSearches = () => {
     let keys = Object.keys(localStorage);
 
     for (let i = 0; i < keys.length; i++) {
-        let recentSearchDisplay = $('<button>');
-        recentSearchDisplay.attr('type', 'button')
-        recentSearchDisplay.attr('class', 'btn m-2')
-        recentSearchDisplay[0].textContent = keys[i].replace(/%20/g,' ');
-        recent.append(recentSearchDisplay);
+        let checkKey = JSON.parse(localStorage.getItem(keys[i]));
+        if(checkKey.city && checkKey.url && checkKey.zipCode) {
+            let recentSearchDisplay = $('<button>');
+            recentSearchDisplay.attr('type', 'button')
+            recentSearchDisplay.attr('class', 'btn m-2')
+            recentSearchDisplay[0].textContent = keys[i].replace(/%20/g,' ');
+            recent.append(recentSearchDisplay);
+        }
     }
 
 }
