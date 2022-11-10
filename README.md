@@ -7,7 +7,8 @@
 
 ## Description
 Want to take a trip? You need to plan for the weather, wherever you're going! 
-Just put in the city and zip code you are visiting, and you'll get the forecast for the next five days!
+Just put in the city and zip code you are visiting, and you'll get the forecast for the next five days.
+It will also save your searches so you can get the forecast for your favorite cities.
 
 ## Built With
 - HTML
