@@ -1,0 +1,32 @@
+:root {
+    --dark: #004602;
+    --light: #6077fc;
+    
+}
+
+.jumbotron {
+    padding: 0;
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+.jumbotron h1 {
+    padding: 2rem 0;
+}
+
+.container form {
+    padding: 2rem 0;
+}
+
+.list-group h2 {
+    border-bottom: 2px black dashed;
+}
+
+.list-group-item {
+    color: var(--light);
+}
+
+.list-group-item :hover {
+    background-color: var(--light);
+    color: var(--dark);
+}
