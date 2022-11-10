@@ -12,32 +12,67 @@
         <h1 class="display-3">Welcome to the Weather Getter</h1>
     </div>
     <div class="container-fluid d-flex flex-row">
-        <div class="container col d-flex flex-column mw-25">
+        <div id="searches" class="container col-md-3 col-sm-6 d-flex flex-column">
             <form class="form-group align mp-4">
-                <label for="citySearch">Search for a city</label>
-                <input type="text" class="form-control" id="citySearch" placeholder="Enter a city">
-                <button type="submit" id="search" class="btn btn-dark mt-2">Search</button>
+                <label for="citySearch">Search for a City:</label>
+                <input type="text" class="form-control" id="citySearch" placeholder="Enter a City and Zip Code">
+                <button type="submit" id="searchBtn" class="btn btn-dark mt-2">Search</button>
             </form>
-            <ul id="recentSearches" class="list-group d-flex flex-column h-100">
+            <div id="recentSearches" role="group" class="btn-group d-flex flex-column">
                 <h2>Recent Searches</h2>
-            </ul>
+            </div>
         </div>
-        <div class="container col mw-75">
-            <header class="row container-fluid d-flex flex-column">
-                <h2>City Name (date)</h2>
-                <p id="temp">Temp</p>
-                <p id="wind">Wind</p>
-                <p id="humidity">Humidity</p>
+        <div class="container col-md-9 col-sm-6 mw-75">
+            <header id="current-day" class="row container-fluid d-flex flex-column">
+                <h2 id="city">City Name (date)</h2>
+                <p>Temp: <span id="temp"></span></p>
+                <p>Wind: <span id="wind"></span></p>
+                <p>Humidity: <span id="humidity"></span></p>
             </header>
             <section class="row">
                 5-Day Forecast
             </section>
-            <section class="row container-fluid">
-                <div id="one-day" class="card col">Day One</div>
-                <div id="two-day" class="card col">Day Two</div>
-                <div id="three-day" class="card col">Day Three</div>
-                <div id="four-day" class="card col">Day Four</div>
-                <div id="five-day" class="card col">Day Five</div>
+            <section id="forecast" class="row container-fluid d-flex flex-wrap">
+                <div id="day-one" class="card col-lg col-md-4 col-sm-12 d-flex flex-column m-1">
+                    <h3 class="row">Day One</h3>
+                    <img class="row img-fluid">
+                    <p class="row">High: </p>
+                    <p class="row">Low: </p>
+                    <p class="row">Wind: </p>
+                    <p class="row">Humidity: </p>
+                </div>
+                <div id="day-two" class="card col-lg col-md-4 col-sm-12 d-flex flex-column m-1">
+                    <h3 class="row">Day Two</h3>
+                    <img class="row img-fluid">
+                    <p class="row">High: </p>
+                    <p class="row">Low: </p>
+                    <p class="row">Wind: </p>
+                    <p class="row">Humidity: </p>
+                </div>
+                <div id="day-three" class="card col-lg col-md-4 col-sm-12 d-flex flex-column m-1">
+                    <h3 class="row">Day Three</h3>
+                    <img class="row img-fluid">
+                    <p class="row">High: </p>
+                    <p class="row">Low: </p>
+                    <p class="row">Wind: </p>
+                    <p class="row">Humidity: </p>
+                </div>
+                <div id="day-four" class="card col-lg col-md-4 col-sm-12 d-flex flex-column m-1">
+                    <h3 class="row">Day Four</h3>
+                    <img class="row img-fluid">
+                    <p class="row">High: </p>
+                    <p class="row">Low: </p>
+                    <p class="row">Wind: </p>
+                    <p class="row">Humidity: </p>
+                </div>
+                <div id="day-five" class="card col-lg col-md-4 col-sm-12 d-flex flex-column m-1">
+                    <h3 class="row">Day Five</h3>
+                    <img class="row img-fluid">
+                    <p class="row">High: </p>
+                    <p class="row">Low: </p>
+                    <p class="row">Wind: </p>
+                    <p class="row">Humidity: </p>
+                </div>
             </section>
         </div>
     </div>

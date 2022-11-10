@@ -1,6 +1,6 @@
 :root {
     --dark: #004602;
-    --light: #6077fc;
+    --light: #d5dbff;
     
 }
 
@@ -18,15 +18,49 @@
     padding: 2rem 0;
 }
 
-.list-group h2 {
-    border-bottom: 2px black dashed;
+.container-fluid {
+    padding-left: 0;
 }
 
-.list-group-item {
+.form-group label {
+    font-size: xx-large;
+}
+
+.btn-group h2 {
+    border-bottom: 2px black dashed;
+    text-align: center;
+}
+
+.btn-group button {
+    background-color: var(--dark);
     color: var(--light);
 }
 
-.list-group-item :hover {
+.btn-group :hover {
     background-color: var(--light);
     color: var(--dark);
+}
+
+#searches {
+    color: var(--dark);
+    font-weight: bolder;
+}
+
+#searchBtn {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+#current-day {
+    border: 2px black solid;
+    color: var(--dark);
+}
+
+#forecast .card {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+#city {
+    font-weight: bolder;
 }
